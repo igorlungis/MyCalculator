@@ -91,6 +91,13 @@ class ViewController: UIViewController {
                 case 4: result.text = String(num1 + numberScreen)
                 default: break
                 }
+            
+            for _ in result.text!.indices {
+                if result.text![result.text!.index(before: result.text!.endIndex)] == "0" || result.text![result.text!.index(before: result.text!.endIndex)] == "." {
+                    result.text!.removeLast()
+                }
+                
+            }
         } else if sender.tag == 6 {
             result.text = ""
             additionalLabel.text = ""
